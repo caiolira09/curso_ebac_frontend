@@ -1,26 +1,18 @@
-const form = document.getElementById('form-deposito');
-const mensagemSucesso = document.querySelector('.mensagem-sucesso');
-const mensagemErro = document.querySelector('.mensagem-erro');
+$(document).ready(function(){
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        const nomeTarefa = $('#texto-tarefa').val();
+        const linkTarefa = $(`<a href="">${nomeTarefa}</a>`);
+        console.log(nomeTarefa);
+        const novaTarefa = $('<li></li>');
+        linkTarefa.appendTo(novaTarefa);
+        $(novaTarefa).appendTo('ul');
+        $('#texto-tarefa').val('');
 
-function validacao(numeros) { 
-    const [numA, numB] = numeros;
-    return numB > numA;
-}
+        linkTarefa.on('click', function(e){
+            e.preventDefault();
+            $(this).toggleClass('risca-texto');
+        })
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const numeroA = document.getElementById('numero-a').value;
-    const numeroB = document.getElementById('numero-b').value;
-
-    // Convert input values to numbers
-    const numArray = [parseFloat(numeroA), parseFloat(numeroB)];
-
-    if (validacao(numArray)) {
-        mensagemSucesso.style.display = 'block';
-        mensagemErro.style.display = 'none';
-    } else {
-        mensagemSucesso.style.display = 'none';
-        mensagemErro.style.display = 'block';
-    }
-});
+    })
+})

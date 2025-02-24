@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício DOM</title>
+    <title>Lista de tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>EBAC - Formulário</h1>
-        <form id="form-deposito">
-            <input type="number" id="numero-a" required placeholder="Número A">
-            <input type="number" id="numero-b" required placeholder="Número B">
-            <button id="btn" type="submit">Enviar</button>
-        </form>
-        <p class="mensagem-sucesso">Formulário válido!</p>
-        <p class="mensagem-erro">Formulário inválido!</p>
-    </div>
+    <h1>Lista de tarefas</h1>
+    <form>
+        <input type="text" id="texto-tarefa" required placeholder="Nome da tarefa">
+        <button type="submit">Cadastrar</button>
+    </form>
+    <ul>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
